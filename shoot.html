@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>클럽하와이 VOD 촬영 가이드</title>
+<meta name="description" content="휴대폰 촬영 세팅과 녹화 직전 체크리스트를 안내드립니다.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="클럽하와이">
+<meta property="og:title" content="클럽하와이 VOD 촬영 가이드">
+<meta property="og:description" content="휴대폰 촬영 세팅과 녹화 직전 체크리스트를 안내드립니다.">
+<meta property="og:image" content="https://clubhawaii.github.io/lecturer-guide/og-shoot.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://clubhawaii.github.io/lecturer-guide/shoot.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+/* VOICE: 강연자께 드리는 공식 촬영 안내. 정중하고 간결하게.
+   IDEA: 참고 이미지의 서비스 소개 패널 — 회색 바탕 위 흰 패널, 연회색 둥근 행·카드, 하나만 파랗게 강조, 파란 원형 아이콘.
+   PICTURE: 완성 VOD 예시, 진행 과정 행 목록, 파일 카드 그리드, 배치도·구도, 체크리스트 카드.
+   COLOUR and TYPE: 잉크 #191919, 회색 #595959·#8A8F98, 카드 #F4F5F7, 포인트 블루 #4190ED. Pretendard → Noto Sans KR, 제목 600.
+   LAYOUT: 섹션마다 왼쪽 제목·오른쪽 설명 헤더, 아래 카드 목록/그리드. */
+:root{color-scheme:light dark;
+--page:light-dark(#E4E4E6,#0f0f10);--panel:light-dark(#ffffff,#18181a);--card:light-dark(#F4F5F7,#232326);
+--ink:light-dark(#191919,#f2f2f2);--sub:light-dark(#595959,#b4b4b8);--mute:light-dark(#8A8F98,#8d9199);
+--line:light-dark(#E6E7EA,#2e2e32);--blue:#4190ED;--blueT:light-dark(#2f7fe0,#7fb3f5);--gs:#C2E29B}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--page);color:var(--ink);font:16px/1.6 Pretendard,"Pretendard Variable","Noto Sans KR",system-ui,sans-serif;overflow-x:clip;word-break:keep-all;padding:clamp(12px,3vw,40px) 0}
+.wrap{max-width:1040px;margin:0 auto;padding:0 clamp(10px,3vw,24px);display:grid;gap:clamp(12px,2vw,20px)}
+.panel{background:var(--panel);padding:clamp(24px,4.5vw,56px)}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 40px;align-items:end;margin-bottom:28px}
+h1{font-size:clamp(32px,4.6vw,46px);line-height:1.15;margin:0;font-weight:600;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:clamp(24px,3vw,32px);line-height:1.2;margin:0;font-weight:600;letter-spacing:-.02em;text-wrap:balance}
+.head p{margin:0;color:var(--mute);font-size:15px;max-width:34em}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:0 22px;min-height:46px;border-radius:999px}
+.btn:focus-visible,.go:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.arrow{width:16px;height:16px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,48px);align-items:center}
+.hero .lead{color:var(--mute);margin:16px 0 28px;font-size:16px}
+.hero .lead b{color:var(--ink);font-weight:600}
+.shot{background:var(--card);border-radius:16px;padding:18px}
+.shot svg{width:100%;height:auto;display:block}
+.cap{font-size:13.5px;color:var(--mute);margin-top:10px}
+
+/* rows (진행 과정) */
+.rows{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:9em minmax(0,1fr) minmax(0,1.3fr) 44px;gap:16px;align-items:center;background:var(--card);border-radius:14px;padding:16px 16px 16px 22px}
+.row .d{font-size:22px;font-weight:600;letter-spacing:-.01em}
+.row .t{font-size:18px;font-weight:500}
+.row .x{font-size:14.5px;color:var(--mute);line-height:1.55}
+.go{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center}
+.row.on{background:var(--blue);color:#fff}
+.row.on .x{color:rgba(255,255,255,.85)}
+.row.on .go{background:#fff;color:var(--blue)}
+
+/* file cards */
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.fc{background:var(--card);border-radius:16px;padding:22px 20px 20px;display:flex;flex-direction:column;gap:6px;min-height:200px}
+.ic{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;margin-bottom:22px}
+.ic svg{width:18px;height:18px}
+.fc b{font-size:18px;font-weight:600}
+.fc span{font-size:14px;color:var(--mute)}
+.chips{margin-top:auto;padding-top:12px;display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-style:normal;font-size:12.5px;font-weight:600;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:2px 10px;white-space:nowrap}
+.fc.on{background:var(--blue);color:#fff}
+.fc.on span{color:rgba(255,255,255,.85)}
+.fc.on .ic{background:#fff;color:var(--blue)}
+.fc.on .chip{background:transparent;border-color:rgba(255,255,255,.55);color:#fff}
+.note{display:grid;gap:8px;margin-top:16px}
+.note p{margin:0;background:var(--card);border-radius:12px;padding:12px 16px;font-size:14.5px;color:var(--sub)}
+.note b{color:var(--ink);font-weight:600}
+
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.eq{background:var(--card);border-radius:14px;padding:16px 18px}
+.eq b{display:block;font-size:16px;font-weight:600}
+.eq span{font-size:13.5px;color:var(--mute)}
+.sub3{font-size:17px;font-weight:600;margin:28px 0 12px}
+.order.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.grid5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+@media(max-width:900px){.grid5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.grid2{grid-template-columns:minmax(0,1fr)}}
+/* setup */
+.figs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.figs figure{margin:0;background:var(--card);border-radius:16px;padding:18px}
+.figs svg{width:100%;height:auto;display:block}
+.keys{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:12px}
+.key{background:var(--card);border-radius:14px;padding:16px}
+.key b{display:block;font-size:15px;font-weight:600;margin-bottom:6px;color:var(--blueT)}
+.key span{font-size:14px;color:var(--sub);line-height:1.5;display:block}
+
+/* checklists */
+.prog{display:flex;align-items:center;gap:12px;margin-top:4px}
+.prog strong{font-size:15px;font-weight:600;white-space:nowrap}
+.track{flex:1;height:6px;background:var(--card);border-radius:999px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--blue);border-radius:999px;transition:width .3s}
+.reset{font:inherit;font-size:13.5px;border:1px solid var(--line);background:var(--panel);color:var(--sub);border-radius:999px;padding:0 14px;min-height:34px;cursor:pointer}
+.reset:focus-visible{outline:3px solid var(--blue)}
+.groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.grp{background:var(--card);border-radius:16px;padding:18px 18px 8px}
+.grp h3{font-size:16px;font-weight:600;margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline}
+.grp h3 small{font-size:13px;color:var(--mute);font-weight:500}
+.grp h3 small.ok{color:var(--blueT)}
+.ck{list-style:none;margin:0;padding:0}
+.ck label{display:grid;grid-template-columns:24px minmax(0,1fr);gap:12px;padding:10px 0;border-top:1px solid var(--line);cursor:pointer;align-items:center;font-size:15.5px}
+.ck li:first-child label{border-top:0}
+.ck input{appearance:none;width:22px;height:22px;margin:0;border:1.5px solid var(--mute);border-radius:50%;display:grid;place-content:center;cursor:pointer;background:var(--panel)}
+.ck input:checked{background:var(--blue);border-color:var(--blue)}
+.ck input:checked::after{content:"";width:5px;height:10px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.ck input:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.ck label.on span{color:var(--mute);text-decoration:line-through}
+details{margin:4px 0 10px;font-size:14px;background:var(--panel);border-radius:10px;padding:10px 14px}
+summary{cursor:pointer;font-weight:600;min-height:26px}
+details dl{margin:8px 0 2px;display:grid;grid-template-columns:4em minmax(0,1fr);gap:4px 10px}
+details dt{font-weight:600}
+details dd{margin:0;color:var(--sub)}
+
+/* order */
+.order{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;counter-reset:o}
+.order li{counter-increment:o;background:var(--card);border-radius:16px;padding:18px 16px}
+.order li::before{content:counter(o);width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:600;font-size:15px;margin-bottom:18px}
+.order b{display:block;font-size:16px;font-weight:600;line-height:1.35}
+.order span{display:block;font-size:13.5px;color:var(--mute);margin-top:4px}
+.order li.on{background:var(--blue);color:#fff}
+.order li.on::before{background:#fff;color:var(--blue)}
+.order li.on span{color:rgba(255,255,255,.85)}
+
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px}
+.foot b{font-size:18px;font-weight:600}
+.foot span{color:var(--mute);font-size:14.5px}
+
+@media(max-width:900px){
+  .grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .row{grid-template-columns:6.5em minmax(0,1fr) 44px}.row .x{grid-column:2;grid-row:2}.row .go{grid-column:3;grid-row:1/3}
+  .keys{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .order{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:680px){
+  .head,.hero,.figs,.groups{grid-template-columns:minmax(0,1fr)}
+  .grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .keys{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fc{min-height:0}
+  .row{grid-template-columns:auto minmax(0,1fr) 40px;gap:6px 12px;padding:16px}
+  .row .d{font-size:19px}.row .t{font-size:16px;font-weight:600}
+  .row .x{grid-column:1/3;grid-row:2}
+}
+@media(prefers-reduced-motion:reduce){.fill{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arr" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+<div class="wrap">
+
+<section class="panel">
+  <div class="hero">
+    <div>
+      <h1>VOD<br>촬영 가이드</h1>
+      <p class="lead">줌 강의는 <b>평소처럼</b> 진행해 주시고,<br>VOD용 영상은 <b>휴대폰으로 별도 촬영</b>해 주시기 바랍니다.</p>
+      <a class="btn" href="#prep">준비 체크리스트 <svg class="arrow"><use href="#arr"/></svg></a>
+    </div>
+    <figure class="shot" style="margin:0">
+      <svg viewBox="0 0 480 270" role="img" aria-label="완성된 VOD 예시 화면">
+        <rect x="0" y="0" width="480" height="270" rx="8" fill="var(--panel)"/>
+        <rect x="18" y="18" width="340" height="200" rx="6" fill="var(--card)"/>
+        <rect x="38" y="40" width="190" height="12" rx="3" fill="var(--blue)"/>
+        <rect x="38" y="64" width="130" height="7" rx="3" fill="var(--mute)" opacity=".45"/>
+        <rect x="38" y="79" width="160" height="7" rx="3" fill="var(--mute)" opacity=".45"/>
+        <path d="M44 190 Q100 110 150 135 T260 150" fill="none" stroke="var(--blue)" stroke-width="3"/>
+        <g fill="var(--mute)">
+          <circle cx="402" cy="186" r="30"/>
+          <path d="M330 270 C334 228 362 210 402 210 C442 210 470 228 474 270 Z"/>
+        </g>
+      </svg>
+      <div class="cap">완성 화면 — 강의 슬라이드 위에 강연자 모습을 함께 담아 제작합니다.</div>
+    </figure>
+  </div>
+</section>
+
+<section class="panel" id="flow">
+  <div class="head">
+    <h2>촬영 일정</h2>
+    <p>전체 강의 진행 과정은 <a href="./" style="color:var(--blueT)">강의 진행 가이드</a>를 참고해 주시기 바랍니다.</p>
+  </div>
+  <div class="rows">
+    <div class="row"><span class="d">D-7</span><span class="t">리허설 영상·자료 전달</span><span class="x">강의 당일과 동일하게 세팅해 1분 분량으로 촬영하고, 발표 자료와 함께 구글드라이브 링크 또는 카카오톡으로 전달 부탁드립니다. 검토 후 회신드립니다.</span><a class="go" href="#prep" aria-label="사전 준비 체크리스트로"><svg class="arrow"><use href="#arr"/></svg></a></div>
+    <div class="row on"><span class="d">D-day</span><span class="t">강의 및 촬영</span><span class="x">강의 30분 전 세팅을 마치고, 휴대폰 촬영을 시작한 뒤 강의를 진행해 주시기 바랍니다.</span><a class="go" href="#before" aria-label="녹화 직전 체크리스트로"><svg class="arrow"><use href="#arr"/></svg></a></div>
+    <div class="row"><span class="d">강의 종료 후</span><span class="t">촬영 원본 전달</span><span class="x">강의 당일, 촬영 원본을 업로드 링크로 전달 부탁드립니다.</span><a class="go" href="#files" aria-label="전달 파일로"><svg class="arrow"><use href="#arr"/></svg></a></div>
+  </div>
+</section>
+
+<section class="panel" id="files">
+  <div class="head">
+    <h2>촬영 후 전달 파일</h2>
+    <p>화면 녹화는 클럽하와이 담당자가 진행합니다. 강의 종료 후 아래 파일을 원본 그대로 전달 부탁드립니다. 리허설 영상은 D-7에 자료와 함께 전달해 주시기 바랍니다.</p>
+  </div>
+  <div class="grid2">
+    <div class="fc on">
+      <div class="ic"><svg viewBox="0 0 20 20"><rect x="2" y="5" width="12" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M14 9l4-2.5v7L14 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+      <b>카메라 영상</b><span>VOD 속 강연자 모습 및 숏폼에 사용됩니다.</span>
+      <div class="chips"><em class="chip">강의 당일</em><em class="chip">휴대폰 원본</em></div>
+    </div>
+    <div class="fc">
+      <div class="ic"><svg viewBox="0 0 20 20"><rect x="7" y="2" width="6" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 10a6 6 0 0012 0M10 16v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+      <b>녹음본 (핀마이크 사용 시)</b><span>핀마이크 녹음 파일을 함께 전달 부탁드립니다. 핀마이크가 없으면 영상 속 음성을 보정해 사용하며, 음질 차이가 있을 수 있습니다.</span>
+      <div class="chips"><em class="chip">강의 당일</em><em class="chip">녹음 파일 원본</em></div>
+    </div>
+  </div>
+  <div class="note">
+    <p><b>휴대폰 원본</b> = 아이폰 MOV · 갤럭시 MP4 파일 그대로 전달 부탁드립니다. 변환하거나 용량을 줄이지 말아 주세요.</p>
+    <p><b>영상은 카카오톡으로 전송하지 말아 주세요.</b> 화질이 저하되므로 업로드 링크를 이용해 주시기 바랍니다.</p>
+  </div>
+</section>
+
+<section class="panel" id="gear">
+  <div class="head">
+    <h2>장비 준비</h2>
+    <p>휴대폰 촬영은 필수이며, 조명·그린스크린·핀마이크 세팅은 선택입니다. 세팅 장비는 직접 구매하시거나 본사에서 대여하실 수 있습니다.</p>
+  </div>
+  <div class="grid5">
+    <div class="eq"><b>휴대폰</b><span>필수 · 가로 4K 촬영</span></div>
+    <div class="eq"><b>휴대폰 삼각대</b><span>필수 · 다이소 구매 가능</span></div>
+    <div class="eq"><b>LED 조명</b><span>세팅 · 구매 또는 대여</span></div>
+    <div class="eq"><b>그린스크린 + 스탠드</b><span>세팅 · 구매 또는 대여</span></div>
+    <div class="eq"><b>무선 핀마이크</b><span>세팅 · 보유 장비 또는 대여</span></div>
+  </div>
+  <p class="sub3">세팅 장비 준비 방법</p>
+  <div class="rows">
+    <div class="row"><span class="d">방법 1</span><span class="t">직접 구매</span><span class="x">담당자가 전달드리는 제품 링크를 통해 구매하실 수 있습니다.</span><span></span></div>
+    <div class="row"><span class="d">방법 2</span><span class="t">본사 대여</span><span class="x">양유민PD에게 요청해 주시면 장비를 대여해 드립니다.</span><span></span></div>
+  </div>
+</section>
+
+<section class="panel" id="setup">
+  <div class="head">
+    <h2>촬영 세팅</h2>
+    <p>휴대폰은 강연자 왼쪽 앞에서 비스듬히 배치합니다. 세팅 촬영 시에는 뒤쪽에 그린스크린을 설치합니다. 강의는 줌 화면을 보며 편하게 진행해 주시기 바랍니다.</p>
+  </div>
+  <div class="figs">
+    <figure>
+      <svg viewBox="0 0 420 330" role="img" aria-label="강연자 뒤에서 내려다본 촬영 배치도">
+        <rect x="128" y="58" width="144" height="30" rx="4" fill="var(--panel)" stroke="var(--ink)" stroke-width="1.6"/>
+        <text x="140" y="79" style="font:600 15px Pretendard,'Noto Sans KR',sans-serif;fill:var(--ink)">노트북 (줌)</text>
+        <rect x="62" y="74" width="40" height="22" rx="4" fill="var(--blue)" transform="rotate(45 82 85)"/>
+        <text x="14" y="28" style="font:600 15px Pretendard,'Noto Sans KR',sans-serif;fill:var(--ink)">휴대폰</text>
+        <text x="14" y="48" style="font:500 14px Pretendard,'Noto Sans KR',sans-serif;fill:var(--mute)">왼쪽 앞 30°</text>
+        <line x1="96" y1="100" x2="182" y2="138" stroke="var(--blue)" stroke-width="2.5" stroke-dasharray="5 4"/>
+        <rect x="302" y="64" width="36" height="24" rx="4" fill="var(--panel)" stroke="var(--ink)" stroke-width="1.6" transform="rotate(30 320 76)"/>
+        <text x="296" y="120" style="font:600 15px Pretendard,'Noto Sans KR',sans-serif;fill:var(--ink)">조명 (세팅 시)</text>
+        <line x1="306" y1="88" x2="224" y2="140" stroke="var(--mute)" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <circle cx="200" cy="155" r="28" fill="var(--mute)" opacity=".7"/>
+        <text x="238" y="178" style="font:600 15px Pretendard,'Noto Sans KR',sans-serif;fill:var(--ink)">강연자</text>
+        <g transform="rotate(-16 240 268)">
+          <rect x="96" y="255" width="290" height="28" rx="4" fill="var(--gs)"/>
+          <text x="118" y="275" style="font:600 15px Pretendard,'Noto Sans KR',sans-serif;fill:#191919">그린스크린 (세팅 시 · 1m 뒤)</text>
+        </g>
+      </svg>
+      <div class="cap">강연자 뒤에서 내려다본 배치 (위쪽이 노트북 방향)</div>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 400 300" role="img" aria-label="휴대폰 화면 구도 — 머리 위 여유, 가슴까지 담기">
+        <rect x="10" y="40" width="380" height="214" rx="6" fill="var(--gs)"/>
+        <line x1="136" y1="40" x2="136" y2="254" stroke="#fff" opacity=".7"/><line x1="263" y1="40" x2="263" y2="254" stroke="#fff" opacity=".7"/>
+        <line x1="10" y1="111" x2="390" y2="111" stroke="#fff" opacity=".7"/><line x1="10" y1="182" x2="390" y2="182" stroke="#fff" opacity=".7"/>
+        <g fill="#6f737b">
+          <circle cx="202" cy="142" r="30"/>
+          <path d="M112 254 C116 198 156 170 202 170 C248 170 288 198 292 254 Z"/>
+        </g>
+        <line x1="202" y1="44" x2="202" y2="108" stroke="var(--blue)" stroke-width="3"/>
+        <text x="212" y="82" style="font:600 15px Pretendard,'Noto Sans KR',sans-serif;fill:#191919">머리 위 여유</text>
+        <line x1="298" y1="250" x2="388" y2="250" stroke="var(--blue)" stroke-width="3"/>
+        <text x="388" y="280" text-anchor="end" style="font:600 15px Pretendard,'Noto Sans KR',sans-serif;fill:var(--ink)">가슴(바스트)까지</text>
+      </svg>
+      <div class="cap">휴대폰 화면 — 가로 화면, 인물은 가운데에 머리 위 여유를 두고 가슴(바스트)까지</div>
+    </figure>
+  </div>
+  <div class="keys">
+    <div class="key"><b>휴대폰</b><span>가로 · 4K<br>눈높이</span></div>
+    <div class="key"><b>구도</b><span>머리 위 여유 확보<br>가슴(바스트)까지</span></div>
+    <div class="key"><b>시선</b><span>줌 화면을 보며 진행<br>렌즈 응시 불필요</span></div>
+    <div class="key"><b>조명</b><span>세팅 시 얼굴 앞 1개<br>휴대폰 반대편에 배치</span></div>
+    <div class="key"><b>음향</b><span>핀마이크 사용 시 가슴 중앙<br>미사용 시 영상 음성 사용</span></div>
+  </div>
+</section>
+
+<section class="panel cl" id="prep">
+  <div class="head">
+    <div><h2>사전 준비 체크리스트</h2>
+      <div class="prog"><strong class="pct">0 / 0</strong><div class="track"><div class="fill"></div></div><button type="button" class="reset">초기화</button></div>
+    </div>
+    <p>D-7 리허설 전까지 준비를 마쳐 주시기 바랍니다. 체크한 내용은 이 기기에 저장됩니다.</p>
+  </div>
+  <div class="groups">
+    <div class="grp">
+      <h3>장비 <small></small></h3>
+      <ul class="ck">
+        <li><label><input type="checkbox"><span>휴대폰 삼각대 (눈높이까지)</span></label></li>
+        <li><label><input type="checkbox"><span>휴대폰 충전기 + 긴 케이블</span></label></li>
+        <li><label><input type="checkbox"><span>무선 핀마이크 (보유 또는 대여 시)</span></label></li>
+        <li><label><input type="checkbox"><span>LED 조명 1개 (세팅 시)</span></label></li>
+        <li><label><input type="checkbox"><span>그린스크린 + 스탠드 (세팅 시)</span></label></li>
+      </ul>
+    </div>
+    <div class="grp">
+      <h3>촬영 위치 <small></small></h3>
+      <ul class="ck">
+        <li><label><input type="checkbox"><span>휴대폰은 왼쪽 앞 30°, 눈높이</span></label></li>
+        <li><label><input type="checkbox"><span>창문을 등지지 않는 자리</span></label></li>
+        <li><label><input type="checkbox"><span>바퀴 없는 고정 의자</span></label></li>
+        <li><label><input type="checkbox"><span>그린스크린 주름 없이, 몸과 1m (세팅 시)</span></label></li>
+      </ul>
+    </div>
+    <div class="grp">
+      <h3>복장 <small></small></h3>
+      <ul class="ck">
+        <li><label><input type="checkbox"><span>줄무늬·반짝이 소재 피하기</span></label></li>
+        <li><label><input type="checkbox"><span>소리 나는 액세서리 제외</span></label></li>
+        <li><label><input type="checkbox"><span>초록·연두색 의상 피하기 (세팅 시)</span></label></li>
+      </ul>
+    </div>
+    <div class="grp">
+      <h3>발표 자료·리허설 <small></small></h3>
+      <ul class="ck">
+        <li><label><input type="checkbox"><span>PPT 오른쪽 아래 모서리 여백 확보</span></label></li>
+        <li><label><input type="checkbox"><span>리허설 영상·발표 자료 함께 전달 (D-7)</span></label></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="panel cl" id="before">
+  <div class="head">
+    <div><h2>녹화 직전 체크리스트</h2>
+      <div class="prog"><strong class="pct">0 / 0</strong><div class="track"><div class="fill"></div></div><button type="button" class="reset">초기화</button></div>
+    </div>
+    <p>강의 당일 30분 전, 항목별로 확인 부탁드립니다.</p>
+  </div>
+  <div class="groups">
+    <div class="grp">
+      <h3>휴대폰 <small></small></h3>
+      <ul class="ck">
+        <li><label><input type="checkbox"><span>렌즈 닦기</span></label></li>
+        <li><label><input type="checkbox"><span>4K · 30fps, HDR 해제</span></label></li>
+        <li><label><input type="checkbox"><span>가로 · 1x 렌즈</span></label></li>
+        <li><label><input type="checkbox"><span>저장 공간 30GB 이상</span></label></li>
+        <li><label><input type="checkbox"><span>비행기 모드 + 충전기 연결</span></label></li>
+        <li><label><input type="checkbox"><span>머리 위 여유, 가슴까지 화면에 담기</span></label></li>
+        <li><label><input type="checkbox"><span>얼굴을 길게 눌러 초점·노출 고정</span></label></li>
+      </ul>
+      <details>
+        <summary>기종별 4K·HDR 설정 방법</summary>
+        <dl>
+          <dt>아이폰</dt><dd>설정 → 카메라 → 비디오 녹화 → 4K 30fps, HDR 비디오 해제</dd>
+          <dt>갤럭시</dt><dd>카메라 → 동영상 → 해상도 UHD 30, 설정 → 고급 동영상 옵션 → HDR10+ 해제</dd>
+        </dl>
+      </details>
+    </div>
+    <div class="grp">
+      <h3>음향 <small></small></h3>
+      <ul class="ck">
+        <li><label><input type="checkbox"><span>참가자 음성은 이어폰으로 청취</span></label></li>
+        <li><label><input type="checkbox"><span>10초 테스트 녹화 후 소리 확인</span></label></li>
+        <li><label><input type="checkbox"><span>마이크 배터리 확인 (핀마이크 사용 시)</span></label></li>
+        <li><label><input type="checkbox"><span>핀마이크 가슴 중앙에 부착 (핀마이크 사용 시)</span></label></li>
+        <li><label><input type="checkbox"><span>머리카락·옷이 마이크에 닿지 않음 (핀마이크 사용 시)</span></label></li>
+        <li><label><input type="checkbox"><span>줌 마이크를 수신기로 선택 (핀마이크 사용 시)</span></label></li>
+      </ul>
+    </div>
+    <div class="grp">
+      <h3>공간·조명 <small></small></h3>
+      <ul class="ck">
+        <li><label><input type="checkbox"><span>에어컨·선풍기 끄고 문 닫기</span></label></li>
+        <li><label><input type="checkbox"><span>학원 전화 무음, 「녹화 중」 안내 부착</span></label></li>
+        <li><label><input type="checkbox"><span>조명 켜기 (세팅 시)</span></label></li>
+        <li><label><input type="checkbox"><span>화면 속 배경 전체가 초록색 (세팅 시)</span></label></li>
+      </ul>
+    </div>
+    <div class="grp">
+      <h3>노트북 <small></small></h3>
+      <ul class="ck">
+        <li><label><input type="checkbox"><span>전원·인터넷 연결</span></label></li>
+        <li><label><input type="checkbox"><span>카카오톡 PC 등 알림 끄기</span></label></li>
+        <li><label><input type="checkbox"><span>발표 자료 슬라이드쇼 준비</span></label></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="order">
+  <div class="head">
+    <h2>당일 녹화 순서</h2>
+    <p>쉬는 시간에도 녹화는 중단하지 말아 주시고, 강의 종료 후 당일 촬영 원본을 전달 부탁드립니다.</p>
+  </div>
+  <ol class="order four">
+    <li><b>휴대폰 녹화 시작</b><span>녹화 시간이 흐르는지 확인</span></li>
+    <li><b>마이크 녹음 시작</b><span>핀마이크 사용 시 · 녹음 표시등 확인</span></li>
+    <li class="on"><b>휴대폰을 보고 박수 한 번</b><span>줌 녹화 시작 후 진행 · 영상 싱크 기준</span></li>
+    <li><b>강의 시작</b><span>평소처럼 진행</span></li>
+  </ol>
+</section>
+
+<section class="panel">
+  <div class="foot">
+    <div><b>문의 · 클럽하와이 양유민PD</b><br><span>구매 링크와 업로드 링크는 별도로 전달드립니다.</span></div>
+    <a class="btn" href="./">강의 진행 가이드 <svg class="arrow"><use href="#arr"/></svg></a>
+  </div>
+</section>
+
+</div>
+<script>
+{
+  const KEY='ch_vod_guide_v5';
+  let c={};
+  try{c=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){}
+  const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(c))}catch(e){}};
+  document.querySelectorAll('section.cl').forEach(sec=>{
+    const boxes=[...sec.querySelectorAll('.ck input')];
+    boxes.forEach((b,i)=>{b.id=sec.id+'-'+i;if(c[b.id])b.checked=true;b.closest('label').classList.toggle('on',b.checked)});
+    const update=()=>{
+      sec.querySelectorAll('.grp').forEach(g=>{
+        const bs=[...g.querySelectorAll('input')],n=bs.filter(b=>b.checked).length;
+        const s=g.querySelector('h3 small');s.textContent=n+' / '+bs.length;s.classList.toggle('ok',n===bs.length);
+      });
+      const d=boxes.filter(b=>b.checked).length;
+      sec.querySelector('.pct').textContent=d+' / '+boxes.length;
+      sec.querySelector('.fill').style.width=(d/boxes.length*100)+'%';
+    };
+    sec.addEventListener('change',e=>{
+      const b=e.target;if(!b.matches('input[type=checkbox]'))return;
+      c[b.id]=b.checked;b.closest('label').classList.toggle('on',b.checked);save();update();
+    });
+    const rb=sec.querySelector('.reset');let armed=false,t;
+    rb.addEventListener('click',()=>{
+      if(!armed){armed=true;rb.textContent='한 번 더 누르면 초기화';clearTimeout(t);t=setTimeout(()=>{armed=false;rb.textContent='초기화'},3000);return}
+      armed=false;rb.textContent='초기화';boxes.forEach(b=>{b.checked=false;delete c[b.id];b.closest('label').classList.remove('on')});save();update();
+    });
+    update();
+  });
+}
+</script>
+</body>
+</html>
