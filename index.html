@@ -148,6 +148,8 @@ details dd{margin:0;color:var(--sub)}
 .kl li{counter-increment:k;display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;align-items:start;background:var(--panel);border-radius:12px;padding:12px 14px;font-size:15px}
 .kl li::before{content:counter(k);width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:600;font-size:13.5px}
 .kl b{font-weight:600}
+.grid1{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.grid1 .fc{min-height:0}
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .grid5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
@@ -198,7 +200,7 @@ details dd{margin:0;color:var(--sub)}
   </div>
   <div class="rows">
     <div class="row"><span class="d">한 달 전</span><span class="t">강의 확정 및 사전 안내</span><span class="x">온라인 강의 진행 가이드와 클럽하와이 PPT 템플릿·작성 규칙을 전달드립니다. 세팅 장비 대여 희망 여부를 회신 부탁드립니다.</span><a class="go" href="#vod" aria-label="복습 VOD 촬영으로"><svg class="arrow"><use href="#arr"/></svg></a></div>
-    <div class="row"><span class="d">D-7</span><span class="t">자료 제출 및 리허설 영상 전달</span><span class="x">제출 폼에 핵심 주제와 파트 구성을 작성하시고, 발표 자료·배포용 자료·리허설 영상을 전달해 주시면 검토 후 회신드립니다.</span><a class="go" href="#deck" aria-label="발표 자료 준비로"><svg class="arrow"><use href="#arr"/></svg></a></div>
+    <div class="row"><span class="d">D-7</span><span class="t">자료 제출 및 리허설 영상 전달</span><span class="x">제출 폼에 핵심 주제와 파트 구성을 작성하시고, 발표 및 배포 자료와 리허설 영상을 전달해 주시면 검토 후 회신드립니다.</span><a class="go" href="#deck" aria-label="발표 자료 준비로"><svg class="arrow"><use href="#arr"/></svg></a></div>
     <div class="row on"><span class="d">D-day</span><span class="t">강의 진행</span><span class="x">강의는 줌으로 진행되며, 화면 녹화는 클럽하와이 담당자가 진행합니다. 강의 모습은 휴대폰으로 촬영 부탁드립니다.</span><a class="go" href="#vod" aria-label="복습 VOD 촬영으로"><svg class="arrow"><use href="#arr"/></svg></a></div>
     <div class="row"><span class="d">강의 종료 후</span><span class="t">촬영 원본 전달</span><span class="x">강의 당일, 휴대폰으로 촬영한 원본 영상을 업로드 링크로 전달 부탁드립니다.</span><a class="go" href="#vod" aria-label="복습 VOD 촬영으로"><svg class="arrow"><use href="#arr"/></svg></a></div>
   </div>
@@ -210,19 +212,15 @@ details dd{margin:0;color:var(--sub)}
     <p>발표 자료는 클럽하와이 PPT 템플릿과 작성 규칙에 맞춰 작성하시고, 교육 일주일 전(D-7)까지 제출 폼 작성과 함께 전달 부탁드립니다.</p>
   </div>
   <div class="formbox"><div><b>D-7 자료 제출 폼</b><span>핵심 주제와 파트 구성을 작성해 주시기 바랍니다.</span></div><a class="btn" href="https://forms.gle/eCtq2JsdQEoKERVP8" target="_blank" rel="noopener">제출 폼 작성하기 <svg class="arrow"><use href="#arr"/></svg></a></div>
-  <div class="grid2">
+  <div class="grid1">
     <div class="fc on">
       <div class="ic"><svg viewBox="0 0 20 20"><rect x="3" y="4" width="14" height="10" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 17h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6 11l3-3 2 2 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
-      <b>발표 자료</b><span>강의 화면과 복습 VOD에 사용됩니다. 자료에 포함된 영상·음원은 원본 파일도 함께 전달 부탁드립니다.</span>
-      <div class="chips"><em class="chip">D-7</em><em class="chip">PPT</em></div>
-    </div>
-    <div class="fc">
-      <div class="ic"><svg viewBox="0 0 20 20"><path d="M5 2h7l3 3v13H5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 9h5M8 12h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-      <b>배포용 자료</b><span>수강하시는 원장님께 배포되는 자료입니다.</span>
+      <b>발표 및 배포 자료</b><span>강의 화면과 복습 VOD에 사용되고, 수강하시는 원장님께도 배포됩니다. 강의 화면과 배포 자료는 같은 내용으로 준비해 주시기 바랍니다. 특히 설명회 VOD는 강의 화면과 배포 자료가 달라지지 않도록 부탁드립니다. 자료에 포함된 영상·음원은 원본 파일도 함께 전달 부탁드립니다.</span>
       <div class="chips"><em class="chip">D-7</em><em class="chip">PPT · PDF · 엑셀 등</em></div>
     </div>
   </div>
   <div class="note">
+    <p><b>발표 화면과 배포 자료의 내용이 다른 경우, 담당자(양유민PD)에게 미리 말씀해 주시기 바랍니다.</b></p>
     <p><b>구글드라이브 링크 또는 카카오톡으로 전달해 주시기 바랍니다.</b> 파일명: 교육자료_강의명_클럽하와이</p>
   </div>
 </section>
@@ -230,22 +228,25 @@ details dd{margin:0;color:var(--sub)}
 <section class="panel" id="vod">
   <div class="head">
     <h2>복습 VOD 촬영</h2>
-    <p>모든 강의는 복습 VOD 제작을 위해 강의 모습을 휴대폰으로 촬영합니다. 화면 녹화는 클럽하와이 담당자가 진행합니다.</p>
+    <p>모든 강의는 복습 VOD 제작을 위해 강의 모습을 휴대폰으로 촬영합니다. 화면 녹화는 클럽하와이 담당자가 진행합니다. 줌 화면 녹화는 강연자 화면이 작아 화질에 한계가 있어, 강의 모습은 휴대폰으로 따로 촬영합니다.</p>
   </div>
-  <div class="grid2">
+  <div class="grid1">
     <div class="opt on">
-      <b>기본 촬영 (필수)</b><span>휴대폰을 삼각대에 고정하고 강의 모습을 촬영합니다. 강의 당일 촬영 원본을 전달해 주시기 바랍니다.</span>
+      <b>휴대폰 촬영 (필수)</b><span>휴대폰을 삼각대에 고정하고 강의 모습을 촬영합니다. 강의 당일 촬영 원본을 전달해 주시기 바랍니다.</span>
       <div class="chips"><em class="chip">D-7 리허설 영상</em><em class="chip">당일 원본 전달</em></div>
     </div>
     <div class="opt">
-      <b>세팅 촬영 (선택)</b><span>조명·그린스크린 배경·핀마이크를 더해 촬영합니다. 슬라이드 위에 강연자 모습이 자연스럽게 들어간 VOD로 제작됩니다.</span>
+      <b>더 하면 좋은 세팅 (선택)</b><span>휴대폰 촬영에 조명·그린스크린 배경·핀마이크를 더해 촬영합니다. 장비가 없으면 하지 않으셔도 됩니다. 슬라이드 위에 강연자 모습이 자연스럽게 들어간 VOD로 제작됩니다.</span>
       <div class="chips"><em class="chip">세팅 장비 대여 가능</em></div>
     </div>
   </div>
-  <p class="sub3">필요한 장비</p>
+  <p class="sub3">필수 장비</p>
   <div class="grid5">
     <div class="eq"><b>휴대폰</b><span>필수 · 가로 4K 촬영</span></div>
     <div class="eq"><b>휴대폰 삼각대</b><span>필수 · 다이소 구매 가능</span></div>
+  </div>
+  <p class="sub3">선택 장비 (세팅 촬영)</p>
+  <div class="grid5">
     <div class="eq"><b>LED 조명</b><span>세팅 · 다이소 구매 또는 대여</span></div>
     <div class="eq"><b>그린스크린 + 스탠드</b><span>세팅 · 구매 또는 대여</span></div>
     <div class="eq"><b>무선 핀마이크</b><span>세팅 · 보유 장비 또는 대여</span></div>
@@ -256,6 +257,7 @@ details dd{margin:0;color:var(--sub)}
     <div class="row"><span class="d">방법 2</span><span class="t">본사 대여</span><span class="x">양유민PD에게 요청해 주시면 장비를 대여해 드립니다.</span><span></span></div>
   </div>
   <div class="note">
+    <p><b>세팅 장비는 선택 사항입니다.</b> 준비가 어려우시면 하지 않으셔도 됩니다.</p>
     <p><b>촬영 원본 영상은 업로드 링크로 전달 부탁드립니다.</b> 카카오톡으로 전송하면 영상 화질이 저하됩니다.</p>
   </div>
   <div class="end"><a class="btn" href="shoot.html">촬영 가이드 보기 <svg class="arrow"><use href="#arr"/></svg></a></div>
