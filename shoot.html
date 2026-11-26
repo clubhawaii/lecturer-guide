@@ -82,6 +82,8 @@ h2{font-size:clamp(24px,3vw,32px);line-height:1.2;margin:0;font-weight:600;lette
 .eq span{font-size:13.5px;color:var(--mute)}
 .sub3{font-size:17px;font-weight:600;margin:28px 0 12px}
 .order.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.grid1{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.grid1 .fc{min-height:0}
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .grid5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 @media(max-width:900px){.grid5{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -162,9 +164,8 @@ details dd{margin:0;color:var(--sub)}
 <section class="panel">
   <div class="hero">
     <div>
-      <h1>온라인 VOD<br>촬영 가이드</h1>
-      <p class="lead">줌 강의는 <b>평소처럼</b> 진행해 주시고,<br>VOD용 영상은 <b>휴대폰으로 별도 촬영</b>해 주시기 바랍니다.</p>
-      <a class="btn" href="#prep">준비 체크리스트 <svg class="arrow"><use href="#arr"/></svg></a>
+      <h1>클럽하와이<br>온라인 VOD 촬영 가이드</h1>
+      <p class="lead">줌 강의는 <b>평소처럼</b> 진행하며,<br>VOD용 영상은 <b>휴대폰으로 별도 촬영</b>해 주시기 바랍니다.</p>
     </div>
     <figure class="shot" style="margin:0">
       <svg viewBox="0 0 480 270" role="img" aria-label="완성된 VOD 예시 화면">
@@ -179,7 +180,7 @@ details dd{margin:0;color:var(--sub)}
           <path d="M330 270 C334 228 362 210 402 210 C442 210 470 228 474 270 Z"/>
         </g>
       </svg>
-      <div class="cap">완성 화면 — 강의 슬라이드 위에 강연자 모습을 함께 담아 제작합니다.</div>
+      <div class="cap">완성 화면: 강의 슬라이드 위에 강연자 모습을 함께 담아 제작합니다.</div>
     </figure>
   </div>
 </section>
@@ -187,35 +188,11 @@ details dd{margin:0;color:var(--sub)}
 <section class="panel" id="flow">
   <div class="head">
     <h2>촬영 일정</h2>
-    <p>전체 강의 진행 과정은 <a href="./" style="color:var(--blueT)">온라인 강의 진행 가이드</a>를 참고해 주시기 바랍니다.</p>
   </div>
   <div class="rows">
-    <div class="row"><span class="d">D-7</span><span class="t">리허설 영상·자료 전달</span><span class="x">강의 당일과 동일하게 세팅해 1분 분량으로 촬영하고, 발표 자료와 함께 구글드라이브 링크 또는 카카오톡으로 전달 부탁드립니다. 검토 후 회신드립니다.</span><a class="go" href="#prep" aria-label="사전 준비 체크리스트로"><svg class="arrow"><use href="#arr"/></svg></a></div>
-    <div class="row on"><span class="d">D-day</span><span class="t">강의 및 촬영</span><span class="x">강의 30분 전 세팅을 마치고, 휴대폰 촬영을 시작한 뒤 강의를 진행해 주시기 바랍니다.</span><a class="go" href="#before" aria-label="녹화 직전 체크리스트로"><svg class="arrow"><use href="#arr"/></svg></a></div>
+    <div class="row"><span class="d">D-7</span><span class="t">리허설 영상·자료 전달</span><span class="x">강의 당일과 동일한 환경에서 30초 정도 촬영해 주세요. 촬영 영상은 발표 자료와 함께 구글 드라이브 링크 또는 카카오톡으로 전달해 주시면 검토 후 회신드리겠습니다.</span><a class="go" href="#prep" aria-label="사전 준비 체크리스트로"><svg class="arrow"><use href="#arr"/></svg></a></div>
+    <div class="row on"><span class="d">D-day</span><span class="t">강의 및 촬영</span><span class="x">강의 시작 30분 전 줌에 접속해 담당자와 함께 세팅을 마친 후, 휴대폰 촬영을 시작하고 강의를 진행해 주세요.</span><a class="go" href="#before" aria-label="녹화 직전 체크리스트로"><svg class="arrow"><use href="#arr"/></svg></a></div>
     <div class="row"><span class="d">강의 종료 후</span><span class="t">촬영 원본 전달</span><span class="x">강의 당일, 촬영 원본을 업로드 링크로 전달 부탁드립니다.</span><a class="go" href="#files" aria-label="전달 파일로"><svg class="arrow"><use href="#arr"/></svg></a></div>
-  </div>
-</section>
-
-<section class="panel" id="files">
-  <div class="head">
-    <h2>촬영 후 전달 파일</h2>
-    <p>화면 녹화는 클럽하와이 담당자가 진행합니다. 강의 종료 후 아래 파일을 원본 그대로 전달 부탁드립니다. 리허설 영상은 D-7에 자료와 함께 전달해 주시기 바랍니다.</p>
-  </div>
-  <div class="grid2">
-    <div class="fc on">
-      <div class="ic"><svg viewBox="0 0 20 20"><rect x="2" y="5" width="12" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M14 9l4-2.5v7L14 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
-      <b>카메라 영상</b><span>VOD 속 강연자 모습 및 숏폼에 사용됩니다.</span>
-      <div class="chips"><em class="chip">강의 당일</em><em class="chip">휴대폰 원본</em></div>
-    </div>
-    <div class="fc">
-      <div class="ic"><svg viewBox="0 0 20 20"><rect x="7" y="2" width="6" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 10a6 6 0 0012 0M10 16v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-      <b>핀마이크 녹음본</b><span>핀마이크 녹음 파일을 함께 전달 부탁드립니다.</span>
-      <div class="chips"><em class="chip">강의 당일</em><em class="chip">녹음 파일 원본</em></div>
-    </div>
-  </div>
-  <div class="note">
-    <p><b>휴대폰 원본</b> = 아이폰 MOV · 갤럭시 MP4 파일 그대로 전달 부탁드립니다. 변환하거나 용량을 줄이지 말아 주세요.</p>
-    <p><b>영상은 카카오톡으로 전송하지 말아 주세요.</b> 화질이 저하되므로 업로드 링크를 이용해 주시기 바랍니다.</p>
   </div>
 </section>
 
@@ -232,7 +209,7 @@ details dd{margin:0;color:var(--sub)}
     <div class="eq"><b>무선 핀마이크</b><span>본사 대여</span></div>
   </div>
   <div class="note">
-    <p><b>대여 일정은 담당자(양유민PD)가 안내드립니다.</b> 세팅이 어려운 사정이 있으시면 담당자(양유민PD)와 협의 후 휴대폰 촬영만 진행합니다.</p>
+    <p><b>대여 일정은 담당자(양유민PD)가 안내드립니다.</b> 세팅이 어려운 사정이 있으시면 담당자(양유민PD)와 협의 부탁드립니다.</p>
   </div>
 </section>
 
@@ -285,6 +262,29 @@ details dd{margin:0;color:var(--sub)}
     <div class="key"><b>시선</b><span>줌 화면을 보며 진행<br>렌즈 응시 불필요</span></div>
     <div class="key"><b>조명</b><span>얼굴 앞 1개<br>휴대폰 반대편에 배치</span></div>
     <div class="key"><b>음향</b><span>핀마이크를<br>가슴 중앙에 부착</span></div>
+  </div>
+  <p class="sub3">핀마이크 연결 방법</p>
+  <div class="grid3">
+    <div class="eq"><b>구성품</b><span>마이크 2개 · 리시버(수신기) · 충전케이스 · 바람막이 · C타입→USB 어댑터</span></div>
+    <div class="eq"><b>휴대폰에 연결</b><span>리시버를 휴대폰 C타입 단자에 꽂습니다. 휴대폰 영상에 핀마이크 소리가 함께 녹음됩니다.</span></div>
+    <div class="eq"><b>노트북에 연결</b><span>리시버를 노트북 C타입 단자에 꽂습니다. C타입 단자가 없으면 어댑터를 끼워 USB 단자에 연결하고, 줌 마이크를 리시버로 선택합니다.</span></div>
+  </div>
+</section>
+
+<section class="panel" id="files">
+  <div class="head">
+    <h2>촬영 후 전달 파일</h2>
+  </div>
+  <div class="grid1">
+    <div class="fc on">
+      <div class="ic"><svg viewBox="0 0 20 20"><rect x="2" y="5" width="12" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M14 9l4-2.5v7L14 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+      <b>카메라 영상</b><span>VOD 속 강연자 모습 및 숏폼에 사용됩니다.</span>
+      <div class="chips"><em class="chip">강의 당일</em><em class="chip">휴대폰 원본</em></div>
+    </div>
+  </div>
+  <div class="note">
+    <p><b>휴대폰 원본</b> = 아이폰 MOV · 갤럭시 MP4 파일 그대로 전달 부탁드립니다. 변환하거나 용량을 줄이지 말아 주세요.</p>
+    <p><b>영상은 카카오톡으로 전송하지 말아 주세요.</b> 화질이 저하되므로 업로드 링크를 이용해 주시기 바랍니다.</p>
   </div>
 </section>
 
